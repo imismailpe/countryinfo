@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Menu } from 'antd';
 
-export const MenuComp = (props) => {
+const MenuComp = (props) => {
     const [current, setcurrent] = useState('All');
-    const isMobile = navigator.userAgentData.mobile;
     const handleClick = e => {
         setcurrent(e.key)
       };
     return (
-        <Menu onClick={this.handleClick} onClick={handleClick} selectedKeys={[current]} mode={isMobile ? "vertical" : "horizontal"}>
+        <Menu onClick={handleClick} selectedKeys={[current]} mode={props.mode}>
             <Menu.Item key="All">
                 All
             </Menu.Item>
