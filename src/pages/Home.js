@@ -47,8 +47,8 @@ const Home = () => {
             {/* <MenuComp mode='horizontal'
             // mode={isMobile ? "vertical" : "horizontal"}
             /> */}
+            <div className='searchContainer'><Input value={keyword} onChange={e => handleKeyword(e)} size='middle' className='userInput signinWidth' placeholder='Search' /></div>
             <div className='countryboxContainer'>
-                <div className='searchContainer'><Input value={keyword} onChange={e => handleKeyword(e)} size='middle' className='userInput signinWidth' placeholder='Search' /></div>
                 {
                     dataStore.isFetching ? 'Loading..'
                         : filteredData.map(country => <CountryBox country={country} />)
